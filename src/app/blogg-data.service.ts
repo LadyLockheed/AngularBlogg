@@ -5,6 +5,8 @@ import { ArticleInterface } from './article-interface';
   providedIn: 'root'
 })
 export class BloggDataService {
+  
+  
   articles: ArticleInterface[] = [
     {rubrik: "Sommar",
     story: "I sommar ska jag och Lisa ut och resa."},
@@ -21,6 +23,30 @@ export class BloggDataService {
     {rubrik: "Äntligen helg!",
     story: "Längtat efter fredagen och helgen. Ska bli så skönt!"}
   ];
+
+
+  newArticle;
+
+ saveTitle(){
+  //? Behöver vi spara titeln separat som en sträng? Eventuellt tas denna funktionen bort.
+ }
+
+ saveStory(){
+  //? Behöver vi spara storyn separat som en sträng? Eventuellt tas denna funktionen bort.
+ }
+
+
+  //sparar den nya artikeln och lägger till den i defaultlistan
+ SaveNewArticle(rubrik:string, story:string){
+  
+  this.newArticle = {name:rubrik, story};
+
+  this.articles.push(this.newArticle);
+  
+  console.log("Artikellistan efter pushad ny artikel: ", this.articles);
+
+
+}
 
   
 
