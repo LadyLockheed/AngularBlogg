@@ -1,1 +1,29 @@
 <p>add-article works!</p>
+
+
+<form>
+    <!-- rubrik -->
+    <label for="inputRubrik">Rubrik</label>
+    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik">
+    
+    <!-- kategori -->
+    <label for="inputKategori">Kategori</label>
+    <!-- <input type="text" placeholder="Kategori" id="inputKategori"> -->
+
+    <select placeholder="Kategori">
+		<option selected="selected">Välj kategori</option>
+            <option>Resor</option>
+			<option>Mat</option>
+		    <option>Mode</option>
+			<option>Film</option>
+			<option>Djur</option>
+		
+	</select>
+    
+    <!-- Textruta -->
+    <label for="inputStory">Story</label>
+    <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory"></textarea>
+
+</form>
+
+<button (click)="addArticle()">Skapa</button>

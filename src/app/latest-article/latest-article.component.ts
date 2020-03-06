@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BloggDataService } from '../blogg-data.service';
+import { ArticleInterface } from '../article-interface';
 
 @Component({
   selector: 'app-latest-article',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./latest-article.component.css']
 })
 export class LatestArticleComponent implements OnInit {
+  articles: ArticleInterface[];
 
-  constructor() { }
+  constructor(public bloggDataService: BloggDataService) { }
 
   ngOnInit(): void {
+    console.log("vår lista",this.bloggDataService.articles);
+    this.articles = this.bloggDataService.articles;
+    
+    
   }
 
 }

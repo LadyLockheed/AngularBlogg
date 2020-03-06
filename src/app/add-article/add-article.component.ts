@@ -12,4 +12,9 @@ export class AddArticleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addArticle(){
+    console.log("Addarticle funkar");
+    
+  }
+
 }
