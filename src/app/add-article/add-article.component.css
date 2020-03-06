@@ -1,0 +1,20 @@
+form >label{
+    display:block;
+   
+}
+
+form >input{
+    display:block;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+}
+
+form >select{
+    display:block;
+}
+
+button{
+
+    border-radius: 18px;
+    background-color: #D68563;
+}
