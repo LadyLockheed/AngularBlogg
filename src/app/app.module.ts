@@ -8,6 +8,7 @@ import { LatestArticleComponent } from './latest-article/latest-article.componen
 import { AllArticlesComponent } from './all-articles/all-articles.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
     AddArticleComponent,
     LatestArticleComponent,
     AllArticlesComponent,
-    StartPageComponent
+    StartPageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
