@@ -26,14 +26,15 @@ export class BloggDataService {
     story: "Längtat efter fredagen och helgen. Ska bli så skönt!"}
   ];
 
-  getFiveLatestArticles(){ // skicka till latestArticle comp - this.latestArticle = latestArticles();
+  getFiveLatestArticles(): ArticleInterface[] { // skicka till latestArticle comp - this.latestArticle = latestArticles();
     return this.articles.slice(-5);
   }
 
-  getLatestArticle(){
-    return this.articles.slice(-1);
+  getLatestArticle(): ArticleInterface {
+    console.log('service getLatestArt all articles', this.articles);
+    
+    return this.articles[this.articles.length-1]
   }
-  
 
  saveTitle(){
   //? Behöver vi spara titeln separat som en sträng? Eventuellt tas denna funktionen bort.

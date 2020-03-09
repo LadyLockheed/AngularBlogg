@@ -9,7 +9,7 @@ import { ArticleInterface } from '../article-interface';
 })
 export class StartPageComponent implements OnInit {
 
-  latestArticle: ArticleInterface[]; 
+  latestArticle: ArticleInterface; 
 
   constructor(public bloggDataService: BloggDataService) { }
 
