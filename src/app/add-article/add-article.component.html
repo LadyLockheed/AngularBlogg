@@ -1,4 +1,4 @@
-<h2>Skapa ett nytt inlägg</h2>
+<h2 class="rubrik">Skapa ett nytt inlägg</h2>
 
 <form>
     <!-- Rubrik -->
@@ -23,8 +23,9 @@
     <label for="inputStory">Story</label>
     <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required
 	[(ngModel)]="form.newStory" name="newStory"
-	#newStory="ngModel"></textarea>
+    #newStory="ngModel"></textarea>
+    <button (click)="addArticle()">Skapa</button>
 </form>
 
-<button (click)="addArticle()">Skapa</button>
+
 

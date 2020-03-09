@@ -2,20 +2,24 @@ header{
     background-color:  #D68563;
     padding: 2em;
 }
-h1{
-    display: inline-block;
+
+img{
+    border: 1px solid pink;
 }
 nav{
+    
     display: inline-block;
-    border: 2px green;
+    border: 2px solid green;
 }
-nav a{
-    padding: 1em 1em 0.7em;
+nav a{ 
+   
+    margin: 1em;
+    padding: 0.5em;
     font-family: 'Roboto', sans-serif;
     color: white;
     text-decoration: none;
 }
-nav a:hover{
+.link:hover{
     border-bottom: 4px solid white;
 }
 .active{
@@ -33,12 +37,18 @@ nav a:hover{
 }
 .logIn:hover{
     border: 2px solid white;
-    border-bottom: 0em;
 }
 footer{
     background-color:  #D68563;
     color: white;
-    padding: 1em;
+    padding: 3em;
+    margin-top: 4em;
+}
+footer h2{
+    margin-bottom: 1em;
+}
+footer p{
+    line-height: 1.5em;
 }
 
 

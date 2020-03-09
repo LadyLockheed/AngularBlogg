@@ -1,0 +1,8 @@
+
+.latestArt:nth-child(odd) {
+    background: lightgrey;
+  }
+  
+.latestArt:nth-child(even) {
+    border: 2px solid lightgrey;
+  }

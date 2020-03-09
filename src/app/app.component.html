@@ -1,22 +1,30 @@
 <header>
-  <img src="./logo.svg" alt="logo" height="42" width="42">
+  <img src="../assets/img/logo.svg" alt="logo">
   <nav>
     <div class="visitor">
-      <a routerLink="/start" routerLinkActive="active">Start</a>
-      <a routerLink="/latestArticle" routerLinkActive="active">Senaste artiklarna</a>
-      <a routerLink="/allArticles" routerLinkActive="active">Upptäck</a>
+      <a routerLink="/start" routerLinkActive="active" class="link">Start</a>
+      <a routerLink="/latestArticle" routerLinkActive="active" class="link">Senaste artiklarna</a>
+      <a routerLink="/allArticles" routerLinkActive="active" class="link">Upptäck</a>
     </div>
   
     <div class="blogger">
       <a routerLink="/addArticle" 
-      routerLinkActive="active">Skapa artikel</a>
+      routerLinkActive="active" class="link">Skapa artikel</a>
       <a routerLink="/logIn" class="logIn">Logga in</a>
     </div>
   </nav>
 </header>
 <router-outlet></router-outlet>
 
-<footer><h2>Angular Blogg</h2></footer>
+<footer>
+  <h2>Angular Blogg</h2>
+  <p>Om oss</p> <!-- påhittade sidor -->
+  <p>Sociala medier</p>
+  <p>Kontakt</p>
+  
+
+
+</footer>
 
 
 
