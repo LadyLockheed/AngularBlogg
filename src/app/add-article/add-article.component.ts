@@ -32,7 +32,7 @@ export class AddArticleComponent implements OnInit {
     console.log("Addarticle funkar");
 
     //TODO När man klickar på addarticle ska formulärsfälten tömmas
-    this.bloggDataService.SaveNewArticle(this.newRubrik, this.newStory)
+    this.bloggDataService.saveNewArticle(this.newRubrik, this.newStory)
     
   }
 

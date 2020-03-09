@@ -37,9 +37,9 @@ export class BloggDataService {
 
 
   //sparar den nya artikeln och lägger till den i defaultlistan
- SaveNewArticle(rubrik:string, story:string){
+ saveNewArticle(headline:string, storyText:string){
   
-  this.newArticle = {name:rubrik, story};
+  this.newArticle = {rubrik:headline, story:storyText};
 
   this.articles.push(this.newArticle);
   
