@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BloggDataService } from '../blogg-data.service';
+import { ArticleInterface } from '../article-interface';
 
 @Component({
   selector: 'app-start-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartPageComponent implements OnInit {
 
-  constructor() { }
+  latestArticle: ArticleInterface[]; 
+
+  constructor(public bloggDataService: BloggDataService) { }
 
   ngOnInit(): void {
+    this.latestArticle = this.bloggDataService.getLatestArticle();
+    console.log("senaste artikeln", this.latestArticle);
+    
   }
 
 }

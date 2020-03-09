@@ -1,1 +1,6 @@
-<p>start-page works!</p>
+<h2>Welcome to Angular Blogg!</h2>
+<div class="start" *ngFor="let article of latestArticle">
+    <h2>{{article.rubrik}}</h2>
+    <p>{{article.story}}</p> 
+    <!-- författare, lästid -->
+</div>

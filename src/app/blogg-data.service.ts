@@ -26,8 +26,12 @@ export class BloggDataService {
     story: "Längtat efter fredagen och helgen. Ska bli så skönt!"}
   ];
 
-  getLatestArticles(){ // skicka till latestArticle comp - this.latestArticle = latestArticles();
+  getFiveLatestArticles(){ // skicka till latestArticle comp - this.latestArticle = latestArticles();
     return this.articles.slice(-5);
+  }
+
+  getLatestArticle(){
+    return this.articles.slice(-1);
   }
   
 
