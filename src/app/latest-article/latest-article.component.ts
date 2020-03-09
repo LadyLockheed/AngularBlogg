@@ -8,13 +8,16 @@ import { ArticleInterface } from '../article-interface';
   styleUrls: ['./latest-article.component.css']
 })
 export class LatestArticleComponent implements OnInit {
-  articles: ArticleInterface[];
+  latestArticles: ArticleInterface[];
 
   constructor(public bloggDataService: BloggDataService) { }
 
   ngOnInit(): void {
-    console.log("vår lista",this.bloggDataService.articles);
-    this.articles = this.bloggDataService.articles;
+    this.latestArticles = this.bloggDataService.getLatestArticles();
+    console.log("vår fullständiga lista",this.bloggDataService.articles);
+    console.log("vår fem senaste", this.latestArticles);
+
+  
     
     
   }

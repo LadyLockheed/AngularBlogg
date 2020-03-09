@@ -6,6 +6,8 @@ import { ArticleInterface } from './article-interface';
 })
 export class BloggDataService {
   
+  newArticle; 
+  latestArticles: ArticleInterface[]; // kopia av lista
   
   articles: ArticleInterface[] = [
     {rubrik: "Sommar",
@@ -24,8 +26,10 @@ export class BloggDataService {
     story: "Längtat efter fredagen och helgen. Ska bli så skönt!"}
   ];
 
-
-  newArticle;
+  getLatestArticles(){ // skicka till latestArticle comp - this.latestArticle = latestArticles();
+    return this.articles.slice(-5);
+  }
+  
 
  saveTitle(){
   //? Behöver vi spara titeln separat som en sträng? Eventuellt tas denna funktionen bort.
@@ -44,12 +48,7 @@ export class BloggDataService {
   this.articles.push(this.newArticle);
   
   console.log("Artikellistan efter pushad ny artikel: ", this.articles);
-
-
 }
 
-  
-
-
-  constructor() { }
+  constructor() {}
 }
