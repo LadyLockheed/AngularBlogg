@@ -18,3 +18,18 @@ button{
     border-radius: 18px;
     background-color: #D68563;
 }
+
+.validError{
+    background-color:rgb(148, 63, 63);
+    display:inline-block;
+    color:white;
+}
+
+.addArticleButton [disabled]{
+ background-color: #ddd; border-color: #ccc; 
+}
+.addArticleButton [disabled]:hover{
+    cursor: not-allowed;
+   }
+
+

@@ -3,15 +3,30 @@
 <form>
     <!-- Rubrik -->
     <label for="inputRubrik">Rubrik</label>
-    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required
+    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required minlength="10"
 	[(ngModel)]="form.newRubrik" name="newRubrik"
     #newRubrik="ngModel">
 
+    <!--! Vad är det för skillnad på dessa två? -->
+<!-- 
+    <div *ngIf="newRubrik.errors?.required" class="validError">  
+        You must enter something in this field!
+    </div> -->
+
+    <div [hidden]="newRubrik.valid || newRubrik.pristine" class="validError">  
+      Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
+    </div>
+
+    
     <!-- Namn -->
     <label for="inputName">Namn</label>
     <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" required
 	[(ngModel)]="form.newName" name="newName"
-	#newName="ngModel">
+    #newName="ngModel">
+    
+    <!-- <div [hidden]="newName.valid || newName.pristine" class="validError">  
+        Mäh, vi vill veta vad du heter.
+     </div> -->
     
     <!-- Tid -->
     <label for="inputReadingTime">Ungefärlig lästid</label>
@@ -25,5 +40,5 @@
 	#newStory="ngModel"></textarea>
 </form>
 
-<button (click)="addArticle()">Skapa</button>
+<button (click)="addArticle()" [disabled]="form.invalid" class="addArticleButton">Skapa</button>
 
