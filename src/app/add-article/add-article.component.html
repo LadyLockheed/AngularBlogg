@@ -3,19 +3,27 @@
 <form>
     <!-- Rubrik -->
     <label for="inputRubrik">Rubrik</label>
-    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)">
+    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required
+	[(ngModel)]="form.newRubrik" name="newRubrik"
+    #newRubrik="ngModel">
 
     <!-- Namn -->
     <label for="inputName">Namn</label>
-    <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)">
+    <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" required
+	[(ngModel)]="form.newName" name="newName"
+	#newName="ngModel">
     
     <!-- Tid -->
     <label for="inputReadingTime">Ungefärlig lästid</label>
-    <input type="text" placeholder="Skriver i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)">
+    <input type="text" placeholder="Skriver i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)" required [(ngModel)]="form.readingTime" name="readingTime"
+	#readingTime="ngModel">
     
     <!-- Textruta -->
     <label for="inputStory">Story</label>
-    <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)"></textarea>
+    <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required
+	[(ngModel)]="form.newStory" name="newStory"
+	#newStory="ngModel"></textarea>
 </form>
 
 <button (click)="addArticle()">Skapa</button>
+

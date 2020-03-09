@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BloggDataService } from '../blogg-data.service'
+import { AddArticleForm } from '../add-article-form';
 
 @Component({
   selector: 'app-add-article',
@@ -11,9 +12,15 @@ export class AddArticleComponent implements OnInit {
   constructor(public bloggDataService:BloggDataService) { }
 
   ngOnInit(): void {
+    this.form = new AddArticleForm('Title', 'Namn', 7, 'Lika bra som Angular!!'); //! Måste det finnas med defaultvärden, vi vill placeholders
   }
 
+  // Bra för felsökning
+	getForm() { return JSON.stringify(this.form); }
+	// skriv {{diagnostic}} i template för att se modellens värden
 
+
+  form: AddArticleForm;
   newRubrik:string;
   newName: string;
   readingTime: number;
@@ -22,24 +29,19 @@ export class AddArticleComponent implements OnInit {
   // TODO validering så att det blir minst tio tecken
   onKeyUpTitle(event){
     this.newRubrik=event.target.value;
-
   }
+
   onKeyUpName(event){
     this.newName = event.target.value;
-
   }
 
   onKeyUpReadingTime(event){
     this.readingTime = event.target.value;
-
   }
-
 
   onKeyUpStory(event){
     this.newStory=event.target.value;
-
   }
-
   addArticle(){
     console.log("Addarticle funkar");
 
