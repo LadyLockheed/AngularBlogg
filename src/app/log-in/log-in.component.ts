@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
+loginButton(){
+  // skapa inlägg ska bli synligt 
+  // delete button på explore lir synligt för bloggare
+}
+
   constructor() { }
 
   ngOnInit(): void {

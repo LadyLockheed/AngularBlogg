@@ -10,19 +10,19 @@ export class BloggDataService {
   latestArticles: ArticleInterface[]; // kopia av lista
   
   articles: ArticleInterface[] = [
-    {rubrik: "Sommar",
+    {rubrik: "Sommar", author: "Hanna", time: 3, 
     story: "I sommar ska jag och Lisa ut och resa."},
-    {rubrik: "Min iller",
+    {rubrik: "Min iller", author: "Lisa", time: 10,
     story: "Min iller är den bästa som finns i världen."},
-    {rubrik: "Svamp!",
+    {rubrik: "Svamp!", author: "Greta", time: 19,
     story: "Skitmysigt att gå i skogen och plocka svamp till sin svampmacka."},
-    {rubrik: "Harry Potter Maraton",
+    {rubrik: "Harry Potter Maraton", author: "Johan", time: 21,
     story: "Bästa filmkvällen på länge. Började på fredag, slutade på måndag."},
-    {rubrik: "Skolan",
+    {rubrik: "Skolan", author: "Johanna", time: 4,
     story: "Det bästa jag gjort är att säga upp mig och börja plugga till frontendutvecklare"},
-    {rubrik: "Godiscravings",
+    {rubrik: "Godiscravings", author: "Karl", time: 9,
     story: "Är sjukt sugen på godis. Önskar jag var Pippi Långstrump med ett guldmynt, hade köpt hela 4gott."},
-    {rubrik: "Äntligen helg!",
+    {rubrik: "Äntligen helg!", author: "Jonas", time: 34,
     story: "Längtat efter fredagen och helgen. Ska bli så skönt!"}
   ];
 
@@ -46,9 +46,9 @@ export class BloggDataService {
 
 
   //sparar den nya artikeln och lägger till den i defaultlistan
- saveNewArticle(headline:string, storyText:string){
+ saveNewArticle(headline:string, name:string, minutes: number, storyText:string){
   
-  this.newArticle = {rubrik:headline, story:storyText};
+  this.newArticle = {rubrik:headline, author: name, time: minutes, story: storyText};
 
   this.articles.push(this.newArticle);
   

@@ -1,4 +1,6 @@
 export interface ArticleInterface {
     rubrik: string;
-    story: string; // text
+    author: string;
+    time: number;
+    story: string; 
 }

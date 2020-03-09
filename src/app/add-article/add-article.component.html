@@ -1,30 +1,21 @@
-<p>add-article works!</p>
-
+<h2>Skapa ett nytt inlägg</h2>
 
 <form>
-    <!-- rubrik -->
+    <!-- Rubrik -->
     <label for="inputRubrik">Rubrik</label>
     <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)">
+
+    <!-- Namn -->
+    <label for="inputName">Namn</label>
+    <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)">
     
-    <!-- kategori -->
-    <label for="inputKategori">Kategori</label>
-    
-    <!-- <input type="text" placeholder="Kategori" id="inputKategori"> -->
-    <select placeholder="Kategori">
-        
-        <option selected="selected">Välj kategori</option>
-            <option>Resor</option>
-			<option>Mat</option>
-		    <option>Mode</option>
-			<option>Film</option>
-			<option>Djur</option>
-		
-	</select>
+    <!-- Tid -->
+    <label for="inputReadingTime">Ungefärlig lästid</label>
+    <input type="text" placeholder="Skriver i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)">
     
     <!-- Textruta -->
     <label for="inputStory">Story</label>
     <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)"></textarea>
-
 </form>
 
 <button (click)="addArticle()">Skapa</button>

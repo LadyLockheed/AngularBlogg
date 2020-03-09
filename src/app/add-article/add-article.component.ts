@@ -15,6 +15,8 @@ export class AddArticleComponent implements OnInit {
 
 
   newRubrik:string;
+  newName: string;
+  readingTime: number;
   newStory:string;
 
   // TODO validering så att det blir minst tio tecken
@@ -22,6 +24,16 @@ export class AddArticleComponent implements OnInit {
     this.newRubrik=event.target.value;
 
   }
+  onKeyUpName(event){
+    this.newName = event.target.value;
+
+  }
+
+  onKeyUpReadingTime(event){
+    this.readingTime = event.target.value;
+
+  }
+
 
   onKeyUpStory(event){
     this.newStory=event.target.value;
@@ -32,7 +44,7 @@ export class AddArticleComponent implements OnInit {
     console.log("Addarticle funkar");
 
     //TODO När man klickar på addarticle ska formulärsfälten tömmas
-    this.bloggDataService.saveNewArticle(this.newRubrik, this.newStory)
+    this.bloggDataService.saveNewArticle(this.newRubrik, this.newName, this.readingTime, this.newStory)
     
   }
 
