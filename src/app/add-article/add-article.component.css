@@ -18,3 +18,7 @@ button{
     border-radius: 18px;
     background-color: #D68563;
 }
+.alert{
+    color: red;
+    font-weight: bold;
+}

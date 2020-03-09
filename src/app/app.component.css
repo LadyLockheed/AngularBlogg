@@ -1,0 +1,44 @@
+header{
+    background-color:  #D68563;
+    padding: 2em;
+}
+h1{
+    display: inline-block;
+}
+nav{
+    display: inline-block;
+    border: 2px green;
+}
+nav a{
+    padding: 1em 1em 0.7em;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+nav a:hover{
+    border-bottom: 4px solid white;
+}
+.active{
+    border-bottom: 4px solid white;
+}
+.visitor{
+    margin-left: 2em;
+    display: inline-block;
+}
+.blogger{
+   display: inline-block;
+}
+.logIn{
+    border: 1px solid white;
+}
+.logIn:hover{
+    border: 2px solid white;
+    border-bottom: 0em;
+}
+footer{
+    background-color:  #D68563;
+    color: white;
+    padding: 1em;
+}
+
+
