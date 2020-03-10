@@ -40,3 +40,8 @@ label{
 .inputStory{
     display: block;
 }
+
+.invalid{
+
+  opacity:0.5;
+}

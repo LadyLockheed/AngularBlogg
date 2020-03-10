@@ -9,28 +9,22 @@
 
     <!-- Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
     <div *ngIf="newRubrik.errors?.required && newRubrik.touched" class="validError">  
-        You must enter something in this field!
+        Glöm inte att fylla i en rubrik.
     </div>
     <div *ngIf="newRubrik.errors?.minlength" class="validError">  
-        Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
+       Din rubrik måste bestå av tio tecken.
     </div>
    
-
-    <!-- Den här blir alltid synlig (alltid false) valid och prisine är css klasser -->
-    <!-- <div [hidden]="newRubrik.valid || newRubrik.pristine" class="validError">  
-      Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
-    </div> -->
-
-    
     <!-- Namn -->
     <label for="inputName">Namn</label>
     <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" required
 	[(ngModel)]="form.newName" name="newName"
     #newName="ngModel">
-    
-    <!-- <div [hidden]="newName.valid || newName.pristine" class="validError">  
-        Mäh, vi vill veta vad du heter.
-     </div> -->
+
+    <div *ngIf="newName.errors?.required && newName.touched" class="validError">  
+        Glöm inte att fylla i ditt namn.
+    </div>
+   
     
     <!-- Tid -->
     <label for="inputReadingTime">Ungefärlig lästid</label>
@@ -47,9 +41,8 @@
 
   
     <!--? Kan man koppla specifika inputfält till knappen? Med inputfältets #. Så man kan skapa specifika felmeddelanden för varje inputfält även kopplat till knappen -->
-    <!--TODO Koppla css till knappen, se validering exempel slide 08 sid 20-->
-     
-    <button (click)="addArticle()" [disabled]="articleForm.invalid" >Skapa</button>
+    
+     <button (click)="addArticle()" [disabled]="articleForm.invalid" [class.invalid]="articleForm.invalid">Skapa</button>
 </form>
 
 
