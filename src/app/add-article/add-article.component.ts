@@ -12,7 +12,7 @@ export class AddArticleComponent implements OnInit {
   constructor(public bloggDataService:BloggDataService) { }
 
   ngOnInit(): void {
-    this.form = new AddArticleForm('Title', 'Namn', 7, 'Lika bra som Angular!!'); //! Måste det finnas med defaultvärden, vi vill placeholders
+    this.form = new AddArticleForm('', '', 7, ''); //! Måste det finnas med defaultvärden, vi vill placeholders
   }
 
   // Bra för felsökning

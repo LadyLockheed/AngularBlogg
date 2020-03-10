@@ -8,7 +8,7 @@
     #newRubrik="ngModel">
 
     <!-- Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
-    <div *ngIf="newRubrik.errors?.required" class="validError">  
+    <div *ngIf="newRubrik.errors?.required && newRubrik.touched" class="validError">  
         You must enter something in this field!
     </div>
     <div *ngIf="newRubrik.errors?.minlength" class="validError">  
