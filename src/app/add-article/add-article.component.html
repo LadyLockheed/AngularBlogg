@@ -28,9 +28,16 @@
     
     <!-- Tid -->
     <label for="inputReadingTime">Ungefärlig lästid</label>
-    <input type="text" placeholder="Skriver i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)" required [(ngModel)]="form.readingTime" name="readingTime"
-	#readingTime="ngModel">
+    <input type="number" placeholder="Skriver i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)" required maxlength="2" [(ngModel)]="form.readingTime" name="readingTime"
+    #readingTime="ngModel">
     
+    <div *ngIf="readingTime.errors?.required && readingTime.touched" class="validError">
+        Vänligen skriv uppskattad lästid. 
+    </div>
+    <div *ngIf="readingTime.errors?.maxlength" class="validError">
+        Max lästid 90 minuter.
+    </div>
+
     <!-- Textruta -->
     <label for="inputStory">Story</label>
     <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required

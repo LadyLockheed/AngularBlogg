@@ -27,13 +27,19 @@ export class BloggDataService {
   ];
 
   getFiveLatestArticles(): ArticleInterface[] { // skicka till latestArticle comp - this.latestArticle = latestArticles();
-    return this.articles.slice(-5);
+    return this.articles.slice(0, 5);
+    /* return this.articles.slice(-5); */ // sista elementet i listan
   }
 
   getLatestArticle(): ArticleInterface {
     console.log('service getLatestArt all articles', this.articles);
     
-    return this.articles[this.articles.length-1]
+    /* return this.articles[this.articles.length-1] */
+    return this.articles[0];
+  }
+
+  getAllArticles(){
+    return this.articles;
   }
 
  saveTitle(){
@@ -50,7 +56,7 @@ export class BloggDataService {
   
   this.newArticle = {rubrik:headline, author: name, time: minutes, story: storyText};
 
-  this.articles.push(this.newArticle);
+  this.articles.unshift(this.newArticle);
   
   console.log("Artikellistan efter pushad ny artikel: ", this.articles);
 }

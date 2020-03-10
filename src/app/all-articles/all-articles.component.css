@@ -1,0 +1,13 @@
+div{
+    padding: 0;
+}
+h3{
+    margin-bottom: 2em;
+}
+.allArticles:nth-child(odd) {
+    background: lightgrey;
+  }
+  
+.allArticles:nth-child(even) {
+    border: 2px solid lightgrey;
+  }
