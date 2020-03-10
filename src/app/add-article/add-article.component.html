@@ -7,15 +7,19 @@
 	[(ngModel)]="form.newRubrik" name="newRubrik"
     #newRubrik="ngModel">
 
-    <!--! Vad är det för skillnad på dessa två? -->
-<!-- 
+    <!-- Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
     <div *ngIf="newRubrik.errors?.required" class="validError">  
         You must enter something in this field!
-    </div> -->
-   
-    <div [hidden]="newRubrik.valid || newRubrik.pristine" class="validError">  
-      Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
     </div>
+    <div *ngIf="newRubrik.errors?.minlength" class="validError">  
+        Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
+    </div>
+   
+
+    <!-- Den här blir alltid synlig (alltid false) valid och prisine är css klasser -->
+    <!-- <div [hidden]="newRubrik.valid || newRubrik.pristine" class="validError">  
+      Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
+    </div> -->
 
     
     <!-- Namn -->
