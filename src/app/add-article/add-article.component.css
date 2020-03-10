@@ -13,10 +13,7 @@ form{
 }
 
 
-<<<<<<< HEAD
-    border-radius: 18px;
-    background-color: #D68563;
-}
+
 
 .validError{
     background-color:rgb(148, 63, 63);
@@ -32,7 +29,6 @@ form{
    }
 
 
-=======
 label{
     font-weight: bold;
     color: #0D09BB;
@@ -44,4 +40,3 @@ label{
 .inputStory{
     display: block;
 }
->>>>>>> hanna

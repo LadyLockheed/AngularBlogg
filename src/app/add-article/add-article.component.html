@@ -3,21 +3,16 @@
 <form>
     <!-- Rubrik -->
     <label for="inputRubrik">Rubrik</label>
-<<<<<<< HEAD
     <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required minlength="10"
-=======
-    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required  
->>>>>>> hanna
 	[(ngModel)]="form.newRubrik" name="newRubrik"
     #newRubrik="ngModel">
-   
 
     <!--! Vad är det för skillnad på dessa två? -->
 <!-- 
     <div *ngIf="newRubrik.errors?.required" class="validError">  
         You must enter something in this field!
     </div> -->
-
+   
     <div [hidden]="newRubrik.valid || newRubrik.pristine" class="validError">  
       Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
     </div>
@@ -42,13 +37,8 @@
     <label for="inputStory">Story</label>
     <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required
 	[(ngModel)]="form.newStory" name="newStory"
-    #newStory="ngModel"></textarea>
-    <button (click)="addArticle()">Skapa</button>
+	#newStory="ngModel"></textarea>
 </form>
 
-<<<<<<< HEAD
 <button (click)="addArticle()" [disabled]="form.invalid" class="addArticleButton">Skapa</button>
-=======
-
->>>>>>> hanna
 
