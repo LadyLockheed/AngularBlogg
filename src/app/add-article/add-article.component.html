@@ -1,18 +1,36 @@
 <h2 class="rubrik">Skapa ett nytt inlägg</h2>
 
-<form>
+<form #articleForm="ngForm">
     <!-- Rubrik -->
     <label for="inputRubrik">Rubrik</label>
-    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required  
+    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required minlength="10"
 	[(ngModel)]="form.newRubrik" name="newRubrik"
     #newRubrik="ngModel">
+
+    <!-- Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
+    <div *ngIf="newRubrik.errors?.required && newRubrik.touched" class="validError">  
+        You must enter something in this field!
+    </div>
+    <div *ngIf="newRubrik.errors?.minlength" class="validError">  
+        Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
+    </div>
    
 
+    <!-- Den här blir alltid synlig (alltid false) valid och prisine är css klasser -->
+    <!-- <div [hidden]="newRubrik.valid || newRubrik.pristine" class="validError">  
+      Kan du räkna upp till tio? Du har ju tio fingar. Använd dem.
+    </div> -->
+
+    
     <!-- Namn -->
     <label for="inputName">Namn</label>
     <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" required
 	[(ngModel)]="form.newName" name="newName"
-	#newName="ngModel">
+    #newName="ngModel">
+    
+    <!-- <div [hidden]="newName.valid || newName.pristine" class="validError">  
+        Mäh, vi vill veta vad du heter.
+     </div> -->
     
     <!-- Tid -->
     <label for="inputReadingTime">Ungefärlig lästid</label>
@@ -24,7 +42,14 @@
     <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required
 	[(ngModel)]="form.newStory" name="newStory"
     #newStory="ngModel"></textarea>
-    <button (click)="addArticle()">Skapa</button>
+    
+    
+
+  
+    <!--? Kan man koppla specifika inputfält till knappen? Med inputfältets #. Så man kan skapa specifika felmeddelanden för varje inputfält även kopplat till knappen -->
+    <!--TODO Koppla css till knappen, se validering exempel slide 08 sid 20-->
+     
+    <button (click)="addArticle()" [disabled]="articleForm.invalid" >Skapa</button>
 </form>
 
 

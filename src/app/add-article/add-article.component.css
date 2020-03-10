@@ -13,6 +13,22 @@ form{
 }
 
 
+
+
+.validError{
+    background-color:rgb(148, 63, 63);
+    display:inline-block;
+    color:white;
+}
+
+.addArticleButton [disabled]{
+ background-color: #ddd; border-color: #ccc; 
+}
+.addArticleButton [disabled]:hover{
+    cursor: not-allowed;
+   }
+
+
 label{
     font-weight: bold;
     color: #0D09BB;
