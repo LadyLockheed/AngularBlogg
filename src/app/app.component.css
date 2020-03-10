@@ -28,9 +28,11 @@ nav a{
 .visitor{
     margin-left: 2em;
     display: inline-block;
+    border: 2px solid blue;
 }
 .blogger{
    display: inline-block;
+   border: 2px solid yellow;
 }
 .logIn{
     border: 1px solid white;
