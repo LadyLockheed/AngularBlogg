@@ -1,10 +1,16 @@
-<h2>Latest articles</h2>
+<h2 class="rubrik">Senaste artiklarna</h2>
 <ng-container>
-    <div *ngFor="let data of latestArticles">
+    <div *ngFor="let data of latestArticles" class="latestArt">
       <h3>{{data.rubrik}}</h3>
+<<<<<<< HEAD
       Av: {{data.author}},
       lästid ca: {{data.time}} minuter.<br>
       {{data.story}}
+=======
+      <p>Av: {{data.author}},
+      Lästid ca: {{data.time}} minuter.<br>
+      {{data.story}}</p>
+>>>>>>> hanna
 
 
     </div>

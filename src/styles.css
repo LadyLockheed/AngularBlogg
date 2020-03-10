@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+button{
+    cursor: pointer;
+    padding: 1em;
+    background-color: #D68563;
+    font-weight: bold;
+    color: #0D09BB;
+    border: 2px solid #D68563;
+
+
+}
+input, textarea{
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+div{
+    padding: 2em;
+    margin: 0 3em 0 3em ;
+}
+p{
+    line-height: 1.5em;
+}
+.rubrik{
+    margin: 2em;
+}

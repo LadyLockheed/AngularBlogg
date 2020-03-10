@@ -1,0 +1,54 @@
+header{
+    background-color:  #D68563;
+    padding: 2em;
+}
+
+img{
+    border: 1px solid pink;
+}
+nav{
+    
+    display: inline-block;
+    border: 2px solid green;
+}
+nav a{ 
+   
+    margin: 1em;
+    padding: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+.link:hover{
+    border-bottom: 4px solid white;
+}
+.active{
+    border-bottom: 4px solid white;
+}
+.visitor{
+    margin-left: 2em;
+    display: inline-block;
+}
+.blogger{
+   display: inline-block;
+}
+.logIn{
+    border: 1px solid white;
+}
+.logIn:hover{
+    border: 2px solid white;
+}
+footer{
+    background-color:  #D68563;
+    color: white;
+    padding: 3em;
+    margin-top: 4em;
+}
+footer h2{
+    margin-bottom: 1em;
+}
+footer p{
+    line-height: 1.5em;
+}
+
+

@@ -5,16 +5,15 @@ form >label{
 
 form >input{
     display:block;
-  margin-top:0.5em;
-  margin-bottom:0.5em;
+   
+}
+form{
+    margin: 2.9em;
+    display: grid;
 }
 
-form >select{
-    display:block;
-}
 
-button{
-
+<<<<<<< HEAD
     border-radius: 18px;
     background-color: #D68563;
 }
@@ -33,3 +32,16 @@ button{
    }
 
 
+=======
+label{
+    font-weight: bold;
+    color: #0D09BB;
+}
+.alert{
+    color: red;
+    font-weight: bold;
+}
+.inputStory{
+    display: block;
+}
+>>>>>>> hanna
