@@ -7,7 +7,8 @@
 	[(ngModel)]="form.newRubrik" name="newRubrik"
     #newRubrik="ngModel">
 
-    <!-- Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
+    <!--* Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
+    <!-- Rubrik validering -->
     <div *ngIf="newRubrik.errors?.required && newRubrik.touched" class="validError">  
         Glöm inte att fylla i en rubrik.
     </div>
@@ -21,6 +22,7 @@
 	[(ngModel)]="form.newName" name="newName"
     #newName="ngModel">
 
+    <!-- Namn validering -->
     <div *ngIf="newName.errors?.required && newName.touched" class="validError">  
         Glöm inte att fylla i ditt namn.
     </div>
@@ -28,15 +30,8 @@
     
     <!-- Tid -->
     <label for="inputReadingTime">Ungefärlig lästid</label>
-    <input type="number" placeholder="Skriver i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)" required maxlength="2" [(ngModel)]="form.readingTime" name="readingTime"
+    <input type="number" placeholder="Skriv i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)" [(ngModel)]="form.readingTime" name="readingTime"
     #readingTime="ngModel">
-    
-    <div *ngIf="readingTime.errors?.required && readingTime.touched" class="validError">
-        Vänligen skriv uppskattad lästid. 
-    </div>
-    <div *ngIf="readingTime.errors?.maxlength" class="validError">
-        Max lästid 90 minuter.
-    </div>
 
     <!-- Textruta -->
     <label for="inputStory">Story</label>

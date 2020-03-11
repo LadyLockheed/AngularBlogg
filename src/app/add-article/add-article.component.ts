@@ -12,12 +12,14 @@ export class AddArticleComponent implements OnInit {
   constructor(public bloggDataService:BloggDataService) { }
 
   ngOnInit(): void {
-    this.form = new AddArticleForm('', '', null, ''); //! Måste det finnas med defaultvärden, vi vill placeholders
+    this.form = new AddArticleForm('', '', '',null); //! Måste det finnas med defaultvärden, vi vill placeholders
   }
 
   // Bra för felsökning
 	getForm() { return JSON.stringify(this.form); }
-	// skriv {{diagnostic}} i template för att se modellens värden
+  // skriv {{diagnostic}} i template för att se modellens värden
+  
+ 
 
 
   form: AddArticleForm;
@@ -36,9 +38,12 @@ export class AddArticleComponent implements OnInit {
   }
 
   onKeyUpReadingTime(event){
-    this.readingTime = event.target.value;
+   
+  this.readingTime = event.target.value;
+ 
   }
 
+  
   onKeyUpStory(event){
     this.newStory=event.target.value;
   }
@@ -47,6 +52,7 @@ export class AddArticleComponent implements OnInit {
 
     //TODO När man klickar på addarticle ska formulärsfälten tömmas
     this.bloggDataService.saveNewArticle(this.newRubrik, this.newName, this.readingTime, this.newStory)
+    
     
   }
 
