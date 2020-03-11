@@ -15,8 +15,7 @@ button{
     font-weight: bold;
     color: #0D09BB;
     border: 2px solid #D68563;
-
-
+    font-size: 0.8em;
 }
 input, textarea{
     padding: 1em;

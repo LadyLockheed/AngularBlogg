@@ -9,6 +9,7 @@ import { ArticleInterface } from '../article-interface';
 })
 export class AllArticlesComponent implements OnInit {
   articles: ArticleInterface[];
+  displayDeleteButton: boolean = true;
 
   constructor(public bloggDataService: BloggDataService) { }
 
