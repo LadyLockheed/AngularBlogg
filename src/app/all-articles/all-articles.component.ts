@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BloggDataService } from '../blogg-data.service';
 import { ArticleInterface } from '../article-interface';
+import { LoginService } from '../login.service'
 
 @Component({
   selector: 'app-all-articles',
@@ -9,12 +10,16 @@ import { ArticleInterface } from '../article-interface';
 })
 export class AllArticlesComponent implements OnInit {
   articles: ArticleInterface[];
-  displayDeleteButton: boolean = true;
+  displayDeleteButton: boolean;
 
-  constructor(public bloggDataService: BloggDataService) { }
+  constructor(public bloggDataService: BloggDataService, public loginService:LoginService) { }
 
   ngOnInit(): void {
     this.articles = this.bloggDataService.getAllArticles();
+    this.loginService.getValue().subscribe((value)=> {
+      this.displayDeleteButton=value;
+    });
   }
+  
 
 }

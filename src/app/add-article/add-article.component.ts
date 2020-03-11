@@ -2,14 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { BloggDataService } from '../blogg-data.service'
 import { AddArticleForm } from '../add-article-form';
 
+
 @Component({
   selector: 'app-add-article',
   templateUrl: './add-article.component.html',
   styleUrls: ['./add-article.component.css']
 })
 export class AddArticleComponent implements OnInit {
+  public displayAddArticle:boolean;
 
-  constructor(public bloggDataService:BloggDataService) { }
+  constructor(public bloggDataService:BloggDataService) { 
+   
+
+  }
 
   ngOnInit(): void {
     this.form = new AddArticleForm('', '', '',null); //! Måste det finnas med defaultvärden, vi vill placeholders
