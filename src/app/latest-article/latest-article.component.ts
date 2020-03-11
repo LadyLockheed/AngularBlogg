@@ -16,9 +16,13 @@ export class LatestArticleComponent implements OnInit {
   ngOnInit(): void {
     this.latestArticles = this.bloggDataService.getFiveLatestArticles();
     
-    for (let i=0; i<5; i++){
-      console.log("lästid första artikeln i listan: ",this.latestArticles[i].time);
-    }
+
+
+    //TODO Karins att göra. Fixa så att om det inte finns nån tid (undefined) att den inte skriver ut den templaten.
+    // for (let i=0; i<5; i++){
+      
+    //   console.log("lästid första artikeln i listan: ",this.latestArticles[i].time);
+    // }
     
 
 

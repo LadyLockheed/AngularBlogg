@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login.service'
+
+
 
 @Component({
   selector: 'app-log-in',
@@ -8,13 +11,17 @@ import { Component, OnInit } from '@angular/core';
 export class LogInComponent implements OnInit {
 
 loginButton(){
-  // skapa inlägg ska bli synligt 
-  // delete button på explore lir synligt för bloggare
+
+  console.log("Logga in knappen funkar");
+  
+  this.loginService.setValue(true);
 }
 
-  constructor() { }
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
+
+
   }
 
 }

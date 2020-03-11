@@ -8,13 +8,18 @@
     </div>
   
     <div class="blogger">
-      <a routerLink="/addArticle" 
-      routerLinkActive="active" class="link">Skapa artikel</a>
+      
+      <ng-container *ngIf="displayAddArticle">
+        <a routerLink="/addArticle" 
+        routerLinkActive="active" class="link">Skapa artikel</a>
+      </ng-container>
+      
       <a routerLink="/logIn" class="logIn">Logga in</a>
     </div>
   </nav>
 </header>
 <router-outlet></router-outlet>
+
 
 <footer>
   <h2>Angular Blogg</h2>
