@@ -11,8 +11,14 @@ import { LoginService } from '../login.service'
 export class AllArticlesComponent implements OnInit {
   articles: ArticleInterface[];
   displayDeleteButton: boolean;
+  articleToBeRemoved; // bara rubrik
 
-  constructor(public bloggDataService: BloggDataService, public loginService:LoginService) { }
+  deleteArticleButton(article){
+    this.articleToBeRemoved = article;
+    this.bloggDataService.deleteArticle(this.articleToBeRemoved);
+  }
+
+  constructor(public bloggDataService: BloggDataService, public loginService: LoginService) { }
 
   ngOnInit(): void {
     this.articles = this.bloggDataService.getAllArticles();

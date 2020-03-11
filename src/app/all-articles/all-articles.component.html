@@ -6,6 +6,6 @@ class="allArticles">
     <div class="container"> 
     <h3>{{data.rubrik}}</h3>
     
-    <button *ngIf="displayDeleteButton" class="deleteButton">Delete</button>
+    <button *ngIf="displayDeleteButton" class="deleteButton" (click)="deleteArticleButton(data.rubrik)">Delete</button>
     </div>
 </div>

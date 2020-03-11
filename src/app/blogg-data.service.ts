@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ArticleInterface } from './article-interface';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ export class BloggDataService {
   
   newArticle; 
   latestArticles: ArticleInterface[]; // kopia av lista
+
+  
   
   articles: ArticleInterface[] = [
     {rubrik: "Sommar", author: "Hanna", time: 3, 
@@ -26,32 +29,28 @@ export class BloggDataService {
     story: "Längtat efter fredagen och helgen. Ska bli så skönt!"}
   ];
 
+  // Visar de fem senaste artiklarna
   getFiveLatestArticles(): ArticleInterface[] { // skicka till latestArticle comp - this.latestArticle = latestArticles();
     return this.articles.slice(0, 5);
     /* return this.articles.slice(-5); */ // sista elementet i listan
   }
 
+  // Visar senaste artiklen på startsidan
   getLatestArticle(): ArticleInterface {
     console.log('service getLatestArt all articles', this.articles);
     
     /* return this.articles[this.articles.length-1] */
     return this.articles[0];
   }
-
+  // Visar alla artiklar
   getAllArticles(){
     return this.articles;
   }
 
- saveTitle(){
-  //? Behöver vi spara titeln separat som en sträng? Eventuellt tas denna funktionen bort.
- }
-
- saveStory(){
-  //? Behöver vi spara storyn separat som en sträng? Eventuellt tas denna funktionen bort.
- }
+ 
 
 
-  //sparar den nya artikeln och lägger till den i defaultlistan
+  // Sparar den nya artikeln och lägger till den i defaultlistan
  saveNewArticle(headline:string, name:string, minutes: number, storyText:string){
   
   this.newArticle = {rubrik:headline, author: name, time: minutes, story: storyText};
@@ -60,6 +59,17 @@ export class BloggDataService {
   
   console.log("Artikellistan efter pushad ny artikel: ", this.articles);
 }
+
+//! Denna måste skicka tillbaka den "nya listan" till all articles comp...
+deleteArticle(article){
+  console.log("blogg-dataservice deleteArticle: ", article);
+  this.articles = this.articles.filter
+  (item => item.rubrik !== article) 
+  console.log("blogg data service deletearticle()", this.articles);
+}
+
+
+
 
   constructor() {}
 }

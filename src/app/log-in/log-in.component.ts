@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service'
+import { LoginService } from '../login.service';
 
 
 
@@ -17,7 +17,7 @@ loginButton(){
   this.loginService.setValue(true);
 }
 
-  constructor(public loginService:LoginService) { }
+  constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
 
