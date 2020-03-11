@@ -1,13 +1,31 @@
+
+/* TODO: padding runt div */
+
 div{
-    padding: 0;
+  padding: 0; 
+  margin:0;
+
+}
+.container{ 
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
 }
 h3{
-    margin-bottom: 2em;
+  display: inline-block;
+  grid-column: 1/5;
+  padding: 1em;
+
+
 }
+.deleteButton{
+  grid-column: 10/11;
+}
+
+
 .allArticles:nth-child(odd) {
     background: lightgrey;
+    border: 2px solid lightgrey;
   }
-  
-.allArticles:nth-child(even) {
+  .allArticles:nth-child(even) {
     border: 2px solid lightgrey;
   }

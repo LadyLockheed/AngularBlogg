@@ -1,5 +1,11 @@
 <h2 class="rubrik">Upptäck</h2>
 
-<div *ngFor="let data of articles"  class="allArticles">
+
+<div *ngFor="let data of articles"  
+class="allArticles">
+    <div class="container"> 
     <h3>{{data.rubrik}}</h3>
+    
+    <button *ngIf="displayDeleteButton" class="deleteButton">Delete</button>
+    </div>
 </div>
