@@ -10,9 +10,11 @@ export class LogInComponent implements OnInit {
 
 displayLogOut:boolean;
 displayLogin:boolean=true;
+loginOrOut: string = "Logga in";
 
 loginButton(){
   this.displayLogin=false;
+  this.loginOrOut = "Logga ut";
   console.log("Logga in knappen funkar");
   this.displayLogOut=true;
   this.loginService.setValue(true);
@@ -20,6 +22,7 @@ loginButton(){
 
 logOutButton(){
   this.displayLogOut=false;
+  this.loginOrOut = "Logga in";
   this.displayLogin=true;
   this.loginService.setValue(false);
   console.log("I logout button");
