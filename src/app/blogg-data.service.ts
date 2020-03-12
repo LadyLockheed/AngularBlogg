@@ -9,6 +9,7 @@ export class BloggDataService {
   
   newArticle; 
   latestArticles: ArticleInterface[]; // kopia av lista
+  articleStory: string;
 
   
   
@@ -31,7 +32,17 @@ export class BloggDataService {
 
   // Visar de fem senaste artiklarna
   getFiveLatestArticles(): ArticleInterface[] { // skicka till latestArticle comp - this.latestArticle = latestArticles();
-    return this.articles.slice(0, 5);
+    this.latestArticles = this.articles.slice(0, 5);
+    console.log("getfivlastest() service ", this.latestArticles);
+    
+    for(let i=0; i < 5; i++ ){
+      this.articleStory = this.latestArticles[i].story;
+      if(this.articleStory.length > 10){
+        this.articleStory = this.articleStory.substring(0, 10);
+      }
+    }
+   
+    return this.latestArticles;
     /* return this.articles.slice(-5); */ // sista elementet i listan
   }
 
@@ -39,6 +50,7 @@ export class BloggDataService {
   getLatestArticle(): ArticleInterface {
     console.log('service getLatestArt all articles', this.articles);
     
+
     /* return this.articles[this.articles.length-1] */
     return this.articles[0];
   }
@@ -60,16 +72,12 @@ export class BloggDataService {
   console.log("Artikellistan efter pushad ny artikel: ", this.articles);
 }
 
-//! Denna måste skicka tillbaka den "nya listan" till all articles comp...
 deleteArticle(article){
   console.log("blogg-dataservice deleteArticle: ", article);
   this.articles = this.articles.filter
   (item => item.rubrik !== article) 
   console.log("blogg data service deletearticle()", this.articles);
 }
-
-
-
 
   constructor() {}
 }

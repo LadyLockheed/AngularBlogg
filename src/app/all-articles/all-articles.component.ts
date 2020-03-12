@@ -11,11 +11,12 @@ import { LoginService } from '../login.service'
 export class AllArticlesComponent implements OnInit {
   articles: ArticleInterface[];
   displayDeleteButton: boolean;
-  articleToBeRemoved; // bara rubrik
+  articleToBeRemoved; // Bara rubrik
 
   deleteArticleButton(article){
     this.articleToBeRemoved = article;
     this.bloggDataService.deleteArticle(this.articleToBeRemoved);
+    this.articles = this.bloggDataService.getAllArticles();
   }
 
   constructor(public bloggDataService: BloggDataService, public loginService: LoginService) { }

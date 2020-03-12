@@ -10,29 +10,23 @@ import { AddArticleForm } from '../add-article-form';
 })
 export class AddArticleComponent implements OnInit {
   public displayAddArticle:boolean;
-
-  constructor(public bloggDataService:BloggDataService) { 
-   
-
-  }
-
-  ngOnInit(): void {
-    this.form = new AddArticleForm('', '', '',null); //! Måste det finnas med defaultvärden, vi vill placeholders
-  }
-
-  // Bra för felsökning
-	getForm() { return JSON.stringify(this.form); }
-  // skriv {{diagnostic}} i template för att se modellens värden
-  
- 
-
-
   form: AddArticleForm;
   newRubrik:string;
   newName: string;
   readingTime: number;
   newStory:string;
 
+  constructor(public bloggDataService:BloggDataService) { 
+  }
+
+  ngOnInit(): void {
+    this.form = new AddArticleForm('', '', null, ''); //! Måste det finnas med defaultvärden, vi vill placeholders
+  }
+
+  // Bra för felsökning
+	getForm() { return JSON.stringify(this.form); }
+  // skriv {{diagnostic}} i template för att se modellens värden
+  
   // TODO validering så att det blir minst tio tecken
   onKeyUpTitle(event){
     this.newRubrik=event.target.value;
@@ -43,9 +37,7 @@ export class AddArticleComponent implements OnInit {
   }
 
   onKeyUpReadingTime(event){
-   
-  this.readingTime = event.target.value;
- 
+    this.readingTime = event.target.value;
   }
 
   
@@ -53,12 +45,11 @@ export class AddArticleComponent implements OnInit {
     this.newStory=event.target.value;
   }
   addArticle(){
-    console.log("Addarticle funkar");
-
-    //TODO När man klickar på addarticle ska formulärsfälten tömmas
-    this.bloggDataService.saveNewArticle(this.newRubrik, this.newName, this.readingTime, this.newStory)
-    
-    
+    // skriver ut anonym om man inte skriver in namn
+    if(this.newName == undefined){
+      this.newName = "Anonym";
+    }
+    this.bloggDataService.saveNewArticle(this.newRubrik, this.newName, this.readingTime, this.newStory) 
   }
 
 }

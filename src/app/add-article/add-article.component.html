@@ -18,20 +18,19 @@
    
     <!-- Namn -->
     <label for="inputName">Namn</label>
-    <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" required
+    <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" 
 	[(ngModel)]="form.newName" name="newName"
     #newName="ngModel">
 
-    <!-- Namn validering -->
-    <div *ngIf="newName.errors?.required && newName.touched" class="validError">  
-        Glöm inte att fylla i ditt namn.
-    </div>
-   
-    
     <!-- Tid -->
     <label for="inputReadingTime">Ungefärlig lästid</label>
-    <input type="number" placeholder="Skriv i minuter" id="inputReadingTime" (keyup)="onKeyUpReadingTime($event)" [(ngModel)]="form.readingTime" name="readingTime"
+    <input type="number" placeholder="Skriv i minuter" id="inputReadingTime"  required (keyup) ="onKeyUpReadingTime($event)" [(ngModel)]="form.readingTime" name="readingTime"
     #readingTime="ngModel">
+
+      <!-- Tid validering -->
+    <div *ngIf="readingTime.errors?.required && readingTime.touched" class="validError">  
+        Vänligen fyll i lästiden 
+    </div>
 
     <!-- Textruta -->
     <label for="inputStory">Story</label>
