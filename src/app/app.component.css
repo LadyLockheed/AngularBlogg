@@ -12,7 +12,6 @@ nav{
     border: 2px solid green;
 }
 nav a{ 
-   
     margin: 1em;
     padding: 0.5em;
     font-family: 'Roboto', sans-serif;
@@ -25,15 +24,38 @@ nav a{
 .active{
     border-bottom: 4px solid white;
 }
+
+/* Logo */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.flex-container{
+    border: 2px solid pink;
+    display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+/* Visitor länkar */
 .visitor{
-    margin-left: 2em;
-    display: inline-block;
     border: 2px solid blue;
 }
+
+/* Mitten div */
+.container{
+    border: 2px solid maroon;
+}
+
+/* Blogger länkar */
 .blogger{
-   display: inline-block;
    border: 2px solid yellow;
 }
+
+
+
 .logIn{
     border: 1px solid white;
 }

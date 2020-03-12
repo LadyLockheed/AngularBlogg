@@ -1,25 +1,24 @@
 <header>
-  <img src="../assets/img/logo.svg" alt="logo">
-  <nav>
-    <div class="visitor">
-      <a routerLink="/start" routerLinkActive="active" class="link">Start</a>
-      <a routerLink="/latestArticle" routerLinkActive="active" class="link">Senaste artiklarna</a>
-      <a routerLink="/allArticles" routerLinkActive="active" class="link">Upptäck</a>
-    </div>
-  
-    <div class="blogger">
-      
-      <!-- display article om inloggad -->
-      <ng-container *ngIf="displayAddArticle">
-        <a routerLink="/addArticle" 
-        routerLinkActive="active" class="link">Skapa artikel</a>
-      </ng-container>
-      
-
-      <a routerLink="/logIn" class="logIn">{{loggInOrOut}}</a>
-      
-    </div>
-  </nav>
+  <div class="flex-container">
+    <img src="../assets/img/logo.svg" alt="logo">
+    <nav>
+      <div class="visitor">
+        <a routerLink="/start" routerLinkActive="active" class="link">Start</a>
+        <a routerLink="/latestArticle" routerLinkActive="active" class="link">Senaste artiklarna</a>
+        <a routerLink="/allArticles" routerLinkActive="active" class="link">Upptäck</a>
+      </div>
+      <div class="container">test</div>
+    
+      <div class="blogger">
+        <!-- display article om inloggad -->
+        <ng-container *ngIf="displayAddArticle">
+          <a routerLink="/addArticle" 
+          routerLinkActive="active" class="link">Skapa artikel</a>
+        </ng-container>
+        <a routerLink="/logIn" class="logIn">{{loggInOrOut}}</a>
+      </div>
+    </nav>
+</div>
 </header>
 <router-outlet></router-outlet>
 
