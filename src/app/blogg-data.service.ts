@@ -8,7 +8,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class BloggDataService {
   
   newArticle; 
-  latestArticles: ArticleInterface[]; // kopia av lista
+  latestFiveArticles: ArticleInterface[]; // kopia av lista
   articleStory: string;
 
   
@@ -32,19 +32,35 @@ export class BloggDataService {
 
   // Visar de fem senaste artiklarna
   getFiveLatestArticles(): ArticleInterface[] { // skicka till latestArticle comp - this.latestArticle = latestArticles();
-    this.latestArticles = this.articles.slice(0, 5);
-    console.log("getfivelastest() service ", this.latestArticles);
+    this.latestFiveArticles = this.articles.slice(0, 5);
+  
     
-    for(let i=0; i < 5; i++ ){
-      this.articleStory = this.latestArticles[i].story;
-      if(this.articleStory.length > 10){
-        this.articleStory = this.articleStory.substring(0, 10);
-      }
-    }
+    let latestFiveShortPreview =this.latestFiveArticles.map(element=>({
+      rubrik:element.rubrik,
+      author:element.author,
+      time:element.time,
+      story:element.story.substring(0,30)
+    }))
+    console.log("Slicad och kapad: ", this.latestFiveArticles);
+    
    
-    return this.latestArticles;
+    return latestFiveShortPreview;
     /* return this.articles.slice(-5); */ // sista elementet i listan
   }
+
+  // let list = [
+  //   { title: 'Hej', content: 'amazing content 1' },
+  //   { title: 'Hej2', content: 'amazing content 2' },
+  //   { title: 'Hej3', content: 'amazing content 3' },
+    
+  // ]
+  // let firstTwo = list.slice(0, 2);
+  // firstTwo.map(
+  //   element => ({
+  //     title: element.title,
+  //     content: element.content.substring(0, 5)
+  //   })
+  // )
 
   // Visar senaste artiklen på startsidan
   getLatestArticle(): ArticleInterface {

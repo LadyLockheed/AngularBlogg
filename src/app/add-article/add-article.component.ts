@@ -20,7 +20,7 @@ export class AddArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form = new AddArticleForm('', '', null, ''); //! Måste det finnas med defaultvärden, vi vill placeholders
+    this.form = new AddArticleForm('', '', null, ''); 
   }
 
   // Bra för felsökning
