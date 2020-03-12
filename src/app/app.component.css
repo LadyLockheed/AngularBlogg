@@ -6,9 +6,12 @@ header{
 img{
     border: 1px solid pink;
 }
+.fill{
+    flex-grow: 1;
+}
 nav{
     
-    display: inline-block;
+    display: flex;
     border: 2px solid green;
 }
 nav a{ 
@@ -34,9 +37,9 @@ img {
 .flex-container{
     border: 2px solid pink;
     display: flex;
-	align-items: center;
+    flex-direction: row;
+
 	justify-content: space-around;
-	flex-wrap: wrap;
 }
 
 /* Visitor länkar */
@@ -46,12 +49,14 @@ img {
 
 /* Mitten div */
 .container{
+    flex-grow: 1;
     border: 2px solid maroon;
 }
-
+/* min width */
 /* Blogger länkar */
 .blogger{
    border: 2px solid yellow;
+   
 }
 
 
@@ -74,5 +79,7 @@ footer h2{
 footer p{
     line-height: 1.5em;
 }
-
+div{
+    margin: 0;
+}
 
