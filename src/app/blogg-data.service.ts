@@ -48,20 +48,6 @@ export class BloggDataService {
     /* return this.articles.slice(-5); */ // sista elementet i listan
   }
 
-  // let list = [
-  //   { title: 'Hej', content: 'amazing content 1' },
-  //   { title: 'Hej2', content: 'amazing content 2' },
-  //   { title: 'Hej3', content: 'amazing content 3' },
-    
-  // ]
-  // let firstTwo = list.slice(0, 2);
-  // firstTwo.map(
-  //   element => ({
-  //     title: element.title,
-  //     content: element.content.substring(0, 5)
-  //   })
-  // )
-
   // Visar senaste artiklen på startsidan
   getLatestArticle(): ArticleInterface {
     console.log('service getLatestArt all articles', this.articles);
@@ -74,9 +60,6 @@ export class BloggDataService {
   getAllArticles(){
     return this.articles;
   }
-
- 
-
 
   // Sparar den nya artikeln och lägger till den i defaultlistan
  saveNewArticle(headline:string, name:string, minutes: number, storyText:string){
