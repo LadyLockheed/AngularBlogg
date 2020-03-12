@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   public displayAddArticle:boolean;
   loggInOrOut:string="Logga in";
   
-  //! Denna ska ligga i onInit, men det funkar inte.
+ 
   constructor(public loginService:LoginService){
    
   }
@@ -21,10 +21,18 @@ export class AppComponent implements OnInit {
       this.displayAddArticle=value;
       if (this.displayAddArticle==true){
         this.loggInOrOut="Logga ut"
+        //this.loginService.setValue(true)
+     }
+      else{
+        this.loggInOrOut="Logga in"
+       
       }
+  
     });
     
   }
+
+ 
 }
 
 
