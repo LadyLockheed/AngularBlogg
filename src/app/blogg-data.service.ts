@@ -33,7 +33,7 @@ export class BloggDataService {
   // Visar de fem senaste artiklarna
   getFiveLatestArticles(): ArticleInterface[] { // skicka till latestArticle comp - this.latestArticle = latestArticles();
     this.latestArticles = this.articles.slice(0, 5);
-    console.log("getfivlastest() service ", this.latestArticles);
+    console.log("getfivelastest() service ", this.latestArticles);
     
     for(let i=0; i < 5; i++ ){
       this.articleStory = this.latestArticles[i].story;
@@ -72,6 +72,7 @@ export class BloggDataService {
   console.log("Artikellistan efter pushad ny artikel: ", this.articles);
 }
 
+// DeleteArticle
 deleteArticle(article){
   console.log("blogg-dataservice deleteArticle: ", article);
   this.articles = this.articles.filter
