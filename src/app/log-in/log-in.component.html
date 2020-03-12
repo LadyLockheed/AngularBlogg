@@ -1,6 +1,12 @@
 <h2 class="rubrik">Logga in</h2>
 
-<form>
+<div *ngIf="displayLogin">
 <input placeholder="Användarnamn">
 <button (click)="loginButton()">Logga in</button>
-</form>
+</div>
+
+<div *ngIf="displayLogOut">
+    
+    <button (click)="logOutButton()">Logga ut</button>
+
+</div>
