@@ -31,31 +31,27 @@ export class BloggDataService {
   ];
 
   // Visar de fem senaste artiklarna
-  getFiveLatestArticles(): ArticleInterface[] { // skicka till latestArticle comp - this.latestArticle = latestArticles();
+  getFiveLatestArticles(): ArticleInterface[] { 
+
     this.latestFiveArticles = this.articles.slice(0, 5);
   
-    
     let latestFiveShortPreview =this.latestFiveArticles.map(element=>({
       rubrik:element.rubrik,
       author:element.author,
       time:element.time,
       story:element.story.substring(0,30)
     }))
-    console.log("Slicad och kapad: ", this.latestFiveArticles);
-    
-   
+  
     return latestFiveShortPreview;
-    /* return this.articles.slice(-5); */ // sista elementet i listan
   }
 
   // Visar senaste artiklen på startsidan
   getLatestArticle(): ArticleInterface {
-    console.log('service getLatestArt all articles', this.articles);
-    
-
-    /* return this.articles[this.articles.length-1] */
+   
+    // return this.articles[this.articles.length-1]--> bra att ha
     return this.articles[0];
   }
+  
   // Visar alla artiklar
   getAllArticles(){
     return this.articles;
@@ -67,16 +63,15 @@ export class BloggDataService {
   this.newArticle = {rubrik:headline, author: name, time: minutes, story: storyText};
 
   this.articles.unshift(this.newArticle);
-  
-  console.log("Artikellistan efter pushad ny artikel: ", this.articles);
+ 
 }
 
-// DeleteArticle
+// Tar bort artikel
 deleteArticle(article){
-  console.log("blogg-dataservice deleteArticle: ", article);
+  
   this.articles = this.articles.filter
   (item => item.rubrik !== article) 
-  console.log("blogg data service deletearticle()", this.articles);
+ 
 }
 
   constructor() {}

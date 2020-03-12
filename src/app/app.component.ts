@@ -11,28 +11,24 @@ export class AppComponent implements OnInit {
   public displayAddArticle:boolean;
   loggInOrOut:string="Logga in";
   
- 
   constructor(public loginService:LoginService){
    
   }
 
   ngOnInit(){
+
     this.loginService.getValue().subscribe((value)=> {
       this.displayAddArticle=value;
       if (this.displayAddArticle==true){
         this.loggInOrOut="Logga ut"
-        //this.loginService.setValue(true)
-     }
+       
+      }
       else{
         this.loggInOrOut="Logga in"
-       
       }
   
     });
-    
   }
-
- 
 }
 
 

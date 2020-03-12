@@ -15,6 +15,7 @@ export class AddArticleComponent implements OnInit {
   newName: string;
   readingTime: number;
   newStory:string;
+  articleIsAdded:boolean=false;
 
   constructor(public bloggDataService:BloggDataService) { 
   }
@@ -27,7 +28,6 @@ export class AddArticleComponent implements OnInit {
 	getForm() { return JSON.stringify(this.form); }
   // skriv {{diagnostic}} i template för att se modellens värden
   
-  // TODO validering så att det blir minst tio tecken
   onKeyUpTitle(event){
     this.newRubrik=event.target.value;
   }
@@ -40,7 +40,6 @@ export class AddArticleComponent implements OnInit {
     this.readingTime = event.target.value;
   }
 
-  
   onKeyUpStory(event){
     this.newStory=event.target.value;
   }
@@ -50,6 +49,11 @@ export class AddArticleComponent implements OnInit {
       this.newName = "Anonym";
     }
     this.bloggDataService.saveNewArticle(this.newRubrik, this.newName, this.readingTime, this.newStory) 
+    this.articleIsAdded=true;
   }
+
+  
+
+
 
 }

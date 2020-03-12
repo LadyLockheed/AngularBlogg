@@ -12,26 +12,8 @@ export class LatestArticleComponent implements OnInit {
 
   constructor(public bloggDataService: BloggDataService) { }
   
-
   ngOnInit(): void {
     this.latestArticles = this.bloggDataService.getFiveLatestArticles();
-    console.log("vår fullständiga lista",this.bloggDataService.articles);
-    console.log("vår fem senaste", this.latestArticles);
-
-  
-
-      
-    
-      
-     
-      
-     
-    
-    
-
-
-   
-    
   }
 
 }

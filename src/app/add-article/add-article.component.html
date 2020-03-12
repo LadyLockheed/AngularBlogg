@@ -7,7 +7,6 @@
 	[(ngModel)]="form.newRubrik" name="newRubrik"
     #newRubrik="ngModel">
 
-    <!--* Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
     <!-- Rubrik validering -->
     <div *ngIf="newRubrik.errors?.required && newRubrik.touched" class="validError">  
         Glöm inte att fylla i en rubrik.
@@ -27,7 +26,7 @@
     <input type="number" placeholder="Skriv i minuter" id="inputReadingTime"  required (keyup) ="onKeyUpReadingTime($event)" [(ngModel)]="form.readingTime" name="readingTime"
     #readingTime="ngModel">
 
-      <!-- Tid validering -->
+    <!-- Tid validering -->
     <div *ngIf="readingTime.errors?.required && readingTime.touched" class="validError">  
         Vänligen fyll i lästiden 
     </div>
@@ -37,14 +36,14 @@
     <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required
 	[(ngModel)]="form.newStory" name="newStory"
     #newStory="ngModel"></textarea>
-    
-    
-
   
-    <!--? Kan man koppla specifika inputfält till knappen? Med inputfältets #. Så man kan skapa specifika felmeddelanden för varje inputfält även kopplat till knappen -->
-    
+    <!-- Lägg till artikel -->
      <button (click)="addArticle()" [disabled]="articleForm.invalid" [class.invalid]="articleForm.invalid">Skapa</button>
 </form>
+
+<h3 *ngIf="articleIsAdded">Din artikel är tillagd</h3>
+
+
 
 
 

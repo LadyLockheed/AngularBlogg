@@ -11,7 +11,7 @@ import { LoginService } from '../login.service'
 export class AllArticlesComponent implements OnInit {
   articles: ArticleInterface[];
   displayDeleteButton: boolean;
-  articleToBeRemoved; // Bara rubrik
+  articleToBeRemoved;
 
   deleteArticleButton(article){
     this.articleToBeRemoved = article;

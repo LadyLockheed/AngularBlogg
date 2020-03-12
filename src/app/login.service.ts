@@ -6,9 +6,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class LoginService {
 
-  
   private routerInfo: BehaviorSubject<boolean>;
-
 
   constructor() { 
     
@@ -26,8 +24,5 @@ export class LoginService {
     
     this.routerInfo.next(newValue)
   }
-
-
-
 
 }
