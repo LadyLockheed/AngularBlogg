@@ -6,21 +6,25 @@ import { LoginService } from './login.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angularBlogg';
   public displayAddArticle:boolean;
+  loggInOrOut:string="Logga in";
   
   //! Denna ska ligga i onInit, men det funkar inte.
   constructor(public loginService:LoginService){
-    this.loginService.getValue().subscribe((value)=> {
-      this.displayAddArticle=value;
-    });
+   
   }
 
-  // nogOnInit(){
-
+  ngOnInit(){
+    this.loginService.getValue().subscribe((value)=> {
+      this.displayAddArticle=value;
+      if (this.displayAddArticle==true){
+        this.loggInOrOut="Logga ut"
+      }
+    });
     
-  // }
+  }
 }
 
 
