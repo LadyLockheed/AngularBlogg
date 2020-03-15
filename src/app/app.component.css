@@ -1,22 +1,24 @@
 header{
     background-color:  #D68563;
-    padding: 2em;
 }
-
+/* Logo */
 img{
     border: 1px solid pink;
+    max-width: 100%;
+    height: auto;
+    padding: 1em;
 }
 .fill{
     flex-grow: 1;
 }
 nav{
-    
     display: flex;
     border: 2px solid green;
+    padding: 1em;
 }
 nav a{ 
-    margin: 1em;
-    padding: 0.5em;
+    margin: 0 1em 0 1em;
+    padding: 0.5em 0.5em 0.5em;
     font-family: 'Roboto', sans-serif;
     color: white;
     text-decoration: none;
@@ -26,12 +28,6 @@ nav a{
 }
 .active{
     border-bottom: 4px solid white;
-}
-
-/* Logo */
-img {
-	max-width: 100%;
-	height: auto;
 }
 
 .flex-container{
@@ -48,10 +44,7 @@ img {
 }
 
 /* Mitten div */
-.container{
-    flex-grow: 1;
-    border: 2px solid maroon;
-}
+
 /* min width */
 /* Blogger länkar */
 .blogger{
@@ -81,5 +74,17 @@ footer p{
 }
 div{
     margin: 0;
+    padding: 0;
 }
+
+@media only screen and (max-width: 950px) {
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    img{
+
+    }
+
+  }
 
