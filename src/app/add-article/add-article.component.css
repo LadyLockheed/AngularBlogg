@@ -12,13 +12,12 @@ form{
     display: grid;
 }
 
-
-
-
 .validError{
-    background-color:rgb(148, 63, 63);
+    background-color:#0D09BB;;
     display:inline-block;
     color:white;
+    margin: 0 0 1em 0;
+    padding: 0.8em;
 }
 
 .addArticleButton [disabled]{
