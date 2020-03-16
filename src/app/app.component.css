@@ -3,7 +3,6 @@ header{
 }
 /* Logo */
 img{
-    border: 1px solid pink;
     max-width: 100%;
     height: auto;
     padding: 1em;
@@ -13,7 +12,6 @@ img{
 }
 nav{
     display: flex;
-    border: 2px solid green;
     padding: 1em;
 }
 nav a{ 
@@ -31,28 +29,11 @@ nav a{
 }
 
 .flex-container{
-    border: 2px solid pink;
     display: flex;
     flex-direction: row;
 
 	justify-content: space-around;
 }
-
-/* Visitor länkar */
-.visitor{
-    border: 2px solid blue;
-}
-
-/* Mitten div */
-
-/* min width */
-/* Blogger länkar */
-.blogger{
-   border: 2px solid yellow;
-   
-}
-
-
 
 .logIn{
     border: 1px solid white;
