@@ -36,7 +36,7 @@ logOutButton(){
       this.displayLogOut=value;})
       if (this.displayLogOut == true){
         this.displayLogin=false;
-        this.loginOrOut = "Du är inloggad"
+        this.loginOrOut = "Du är inloggad :)"
       }
       else{
         this.loginOrOut = "Logga in"
