@@ -1,45 +1,52 @@
-<h2 class="rubrik">Skapa ett nytt inlägg</h2>
+<div *ngIf="!loginStatus; else logedIn">
+    <p>You must login to acces this feature</p>
+</div>
+<ng-template #logedIn>
+    <h2 class="rubrik">Skapa ett nytt inlägg</h2>
 
-<form #articleForm="ngForm">
-    <!-- Rubrik -->
-    <label for="inputRubrik">Rubrik</label>
-    <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required minlength="10"
-	[(ngModel)]="form.newRubrik" name="newRubrik"
-    #newRubrik="ngModel">
+    <form #articleForm="ngForm">
+        <!-- Rubrik -->
+        <label for="inputRubrik">Rubrik</label>
+        <input type="text" placeholder="Minst 10 tecken" id="inputRubrik" (keyup)="onKeyUpTitle($event)" required minlength="10"
+        [(ngModel)]="form.newRubrik" name="newRubrik"
+        #newRubrik="ngModel">
 
-    <!-- Rubrik validering -->
-    <div *ngIf="newRubrik.errors?.required && newRubrik.touched" class="validError">  
-        Glöm inte att fylla i en rubrik.
-    </div>
-    <div *ngIf="newRubrik.errors?.minlength" class="validError">  
-       Din rubrik måste bestå av tio tecken.
-    </div>
-   
-    <!-- Namn -->
-    <label for="inputName">Namn</label>
-    <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" 
-	[(ngModel)]="form.newName" name="newName"
-    #newName="ngModel">
+        <!--* Required har bara att göra med vad vi satt allting till i article forms, alltså om det är optional eller ej -->
+        <!-- Rubrik validering -->
+        <div *ngIf="newRubrik.errors?.required && newRubrik.touched" class="validError">  
+            Glöm inte att fylla i en rubrik.
+        </div>
+        <div *ngIf="newRubrik.errors?.minlength" class="validError">  
+        Din rubrik måste bestå av tio tecken.
+        </div>
+    
+        <!-- Namn -->
+        <label for="inputName">Namn</label>
+        <input type="text" placeholder="Ditt name" id="inputName" (keyup)="onKeyUpName($event)" 
+        [(ngModel)]="form.newName" name="newName"
+        #newName="ngModel">
 
-    <!-- Tid -->
-    <label for="inputReadingTime">Ungefärlig lästid</label>
-    <input type="number" placeholder="Skriv i minuter" id="inputReadingTime"  required (keyup) ="onKeyUpReadingTime($event)" [(ngModel)]="form.readingTime" name="readingTime"
-    #readingTime="ngModel">
+        <!-- Tid -->
+        <label for="inputReadingTime">Ungefärlig lästid</label>
+        <input type="number" placeholder="Skriv i minuter" id="inputReadingTime"  required (keyup) ="onKeyUpReadingTime($event)" [(ngModel)]="form.readingTime" name="readingTime"
+        #readingTime="ngModel">
 
-    <!-- Tid validering -->
-    <div *ngIf="readingTime.errors?.required && readingTime.touched" class="validError">  
-        Vänligen fyll i lästiden 
-    </div>
+        <!-- Tid validering -->
+        <div *ngIf="readingTime.errors?.required && readingTime.touched" class="validError">  
+            Vänligen fyll i lästiden 
+        </div>
 
-    <!-- Textruta -->
-    <label for="inputStory">Story</label>
-    <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required
-	[(ngModel)]="form.newStory" name="newStory"
-    #newStory="ngModel"></textarea>
-  
-    <!-- Lägg till artikel -->
-     <button (click)="addArticle()" [disabled]="articleForm.invalid" [class.invalid]="articleForm.invalid">Skapa</button>
-</form>
+        <!-- Textruta -->
+        <label for="inputStory">Story</label>
+        <textarea rows="20" placeholder="Tell us your story ;)" class="inputStory" (keyup)="onKeyUpStory($event)" required
+        [(ngModel)]="form.newStory" name="newStory"
+        #newStory="ngModel"></textarea>
+        
+        <!--? Kan man koppla specifika inputfält till knappen? Med inputfältets #. Så man kan skapa specifika felmeddelanden för varje inputfält även kopplat till knappen -->
+        
+        <button (click)="addArticle()" [disabled]="articleForm.invalid" [class.invalid]="articleForm.invalid">Skapa</button>
+    </form>
+</ng-template>
 
 <h3 *ngIf="articleIsAdded">Din artikel är tillagd</h3>
 

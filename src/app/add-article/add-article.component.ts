@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BloggDataService } from '../blogg-data.service'
 import { AddArticleForm } from '../add-article-form';
+import { LoginService } from '../login.service';
 
 
 @Component({
@@ -16,12 +17,15 @@ export class AddArticleComponent implements OnInit {
   readingTime: number;
   newStory:string;
   articleIsAdded:boolean=false;
+  loginStatus: boolean;
 
-  constructor(public bloggDataService:BloggDataService) { 
+  constructor(public bloggDataService:BloggDataService, public loginService: LoginService) { 
   }
 
   ngOnInit(): void {
-    this.form = new AddArticleForm('', '', null, ''); 
+    this.form = new AddArticleForm('', '', null, '');
+    this.loginService.getValue().subscribe((value)=> {
+      this.loginStatus = value;}) 
   }
 
   // Bra för felsökning

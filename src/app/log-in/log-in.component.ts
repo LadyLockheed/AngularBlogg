@@ -10,18 +10,20 @@ export class LogInComponent implements OnInit {
 
 displayLogOut:boolean;
 displayLogin:boolean=true;
-loginOrOut: string = "Logga in";
+loginOrOut:string;
+
 
 loginButton(){
+  this.loginOrOut = "Du är inloggad :)"
   this.displayLogin=false;
-  this.loginOrOut = "Logga ut";
   this.displayLogOut=true;
   this.loginService.setValue(true);
+  
 }
 
 logOutButton(){
+  this.loginOrOut = "Du är utloggad, välkommen tillbaka!"
   this.displayLogOut=false;
-  this.loginOrOut = "Logga in";
   this.displayLogin=true;
   this.loginService.setValue(false);
 
@@ -31,12 +33,14 @@ logOutButton(){
 
   ngOnInit() {
     this.loginService.getValue().subscribe((value)=> {
-    this.displayLogOut=value;})
-      
-    if (this.displayLogOut==true){
+      this.displayLogOut=value;})
+      if (this.displayLogOut == true){
         this.displayLogin=false;
-    }
-
+        this.loginOrOut = "Du är inloggad"
+      }
+      else{
+        this.loginOrOut = "Logga in"
+      }
   }
 
 }

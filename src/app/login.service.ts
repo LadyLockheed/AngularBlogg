@@ -5,7 +5,8 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-
+  
+  
   private routerInfo: BehaviorSubject<boolean>;
 
   constructor() { 
@@ -19,9 +20,7 @@ export class LoginService {
   }
 
   setValue(newValue):void{
-    console.log("Nu är vi i setvalue i service");
-    console.log("Och detta är vad som skickas från login: ", newValue);
-    
+
     this.routerInfo.next(newValue)
   }
 

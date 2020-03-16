@@ -15,7 +15,6 @@ export class StartPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.latestArticle = this.bloggDataService.getLatestArticle();
-    console.log("senaste artikeln", this.latestArticle);
     
   }
 
