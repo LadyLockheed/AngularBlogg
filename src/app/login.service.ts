@@ -5,7 +5,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-
+  logInOrOut: string;
   
   private routerInfo: BehaviorSubject<boolean>;
 
@@ -26,8 +26,4 @@ export class LoginService {
     
     this.routerInfo.next(newValue)
   }
-
-
-
-
 }
